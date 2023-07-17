@@ -35,6 +35,9 @@ create_symlink .bashrc
 create_symlink .gitconfig
 create_symlink .zshrc
 
+# hyprland
+ln -sf ~/.dotfiles/hypr/hyprland.conf ~/.config/hypr/hyprland.conf
+
 # pacman hooks
 ln -sf ~/.dotfiles/hooks/update-pkglist.hook /usr/share/libalpm/hooks/update-pkglist.hook
 mkdir ~/tmp

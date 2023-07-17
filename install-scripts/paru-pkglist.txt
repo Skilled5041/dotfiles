@@ -1,0 +1,1 @@
+/etc/paru-pkglist.txt
