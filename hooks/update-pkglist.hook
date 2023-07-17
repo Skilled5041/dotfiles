@@ -6,4 +6,4 @@ Target = *
 
 [Action]
 When = PostTransaction
-Exec = /bin/sh -c '/usr/bin/pacman -Qqe > /etc/pkglist.txt && /usr/bin -Qm /etc/paru-pkglist.txt'
+Exec = /bin/sh -c '/usr/bin/pacman -Qqe > /etc/pkglist.txt && /usr/bin/pacman -Qm /etc/paru-pkglist.txt'
