@@ -20,3 +20,4 @@ PROMPT='%n@%m %~ $ '
 
 alias tetrio="tetrio-plus-bin"
 alias cls="clear"
+alias show-battery="cat /sys/class/power_supply/BAT1/capacity"

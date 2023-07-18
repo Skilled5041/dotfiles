@@ -38,6 +38,9 @@ create_symlink .zshrc
 # hyprland
 ln -sf ~/.dotfiles/hypr/hyprland.conf ~/.config/hypr/hyprland.conf
 
+# wayland fixes
+ln -sf ~/.dotfiles/.config/code-flags.conf ~/.config/code-flags.conf
+
 # pacman hooks
 ln -sf ~/.dotfiles/hooks/update-pkglist.hook /usr/share/libalpm/hooks/update-pkglist.hook
 mkdir ~/tmp
