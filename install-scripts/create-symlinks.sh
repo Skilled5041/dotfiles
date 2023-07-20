@@ -35,6 +35,12 @@ create_symlink .bashrc
 create_symlink .gitconfig
 create_symlink .zshrc
 
+# code-oss
+ln -sf ~/.dotfiles/code-oss/settings.json ~/.config/Code\ -\ OSS/User/settings.json
+
+# Kitty
+ln -sf ~/.dotfiles/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf
+
 # hyprland
 ln -sf ~/.dotfiles/hypr/hyprland.conf ~/.config/hypr/hyprland.conf
 
