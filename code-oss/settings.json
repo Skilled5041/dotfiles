@@ -1,5 +1,7 @@
 {
     "glassit-linux.opacity": 50,
     "editor.fontFamily": "'JetBrains Mono Medium', 'monospace', monospace",
-    "editor.cursorStyle": "underline"
+    "editor.cursorStyle": "underline",
+    "git.confirmSync": false,
+    "explorer.confirmDragAndDrop": false
 }
