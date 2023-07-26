@@ -1,7 +1,12 @@
 {
-    "glassit-linux.opacity": 50,
     "editor.fontFamily": "'JetBrains Mono Medium', 'monospace', monospace",
     "editor.cursorStyle": "underline",
     "git.confirmSync": false,
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "github.copilot.advanced": {
+
+    },
+    "[lua]": {
+        "editor.defaultFormatter": "sumneko.lua"
+    }
 }

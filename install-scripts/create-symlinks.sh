@@ -41,6 +41,9 @@ ln -sf ~/.dotfiles/code-oss/settings.json ~/.config/Code\ -\ OSS/User/settings.j
 # Kitty
 ln -sf ~/.dotfiles/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf
 
+# wezterm
+ln -sf ~/.dotfiles/wezterm/.wezterm.lua ~/.wezterm.lua
+
 # hyprland
 ln -sf ~/.dotfiles/hypr/hyprland.conf ~/.config/hypr/hyprland.conf
 
