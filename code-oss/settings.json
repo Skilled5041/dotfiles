@@ -1,5 +1,4 @@
 {
-    "editor.fontFamily": "'JetBrains Mono Medium', 'monospace', monospace",
     "editor.cursorStyle": "underline",
     "git.confirmSync": false,
     "explorer.confirmDragAndDrop": false,
@@ -8,5 +7,8 @@
     },
     "[lua]": {
         "editor.defaultFormatter": "sumneko.lua"
-    }
+    },
+    "editor.fontFamily": "'JetBrainsMono Nerd Font Mono','monospace',monospace",
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "normal"
 }
