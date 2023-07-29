@@ -1,7 +1,7 @@
 # TODO
 
 - Finish hyprland config (window rules)
-- Finish kitty config
+- Finish wezterm config
 - Config nvim
 - Config zsh
 - Clean up dotfiles repo and improve install scripts
