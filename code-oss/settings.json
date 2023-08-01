@@ -10,5 +10,11 @@
     },
     "editor.fontFamily": "'JetBrainsMono Nerd Font Mono','monospace',monospace",
     "editor.fontLigatures": true,
-    "editor.fontWeight": "normal"
+    "editor.fontWeight": "normal",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": false,
+        "scminput": false
+    }
 }

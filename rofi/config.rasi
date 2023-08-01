@@ -1,0 +1,40 @@
+configuration {
+modes: [window, drun, run];
+font: "JetBrainsMono Nerd Font Mono Regular 12";
+location: 0;
+show-icons: true;
+
+display-drun: "";
+display-run: "";
+display-window: "";
+
+/*	ssh-client: "ssh";*/
+/*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
+
+drun-show-actions: true;
+drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+
+disable-history: false;
+sort: true;
+sorting-method: "normal";
+case-sensitive: false;
+cycle: false;
+sidebar-mode: false;
+hover-select: true;
+eh: 1;
+auto-select: false;
+
+click-to-exit: true;
+window-thumbnail: true;
+
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+
+@theme "~/.dotfiles/rofi/theme.rasi"

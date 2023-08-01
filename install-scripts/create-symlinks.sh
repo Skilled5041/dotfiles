@@ -35,6 +35,9 @@ create_symlink .bashrc
 create_symlink .gitconfig
 create_symlink .zshrc
 
+# rofi
+ln -sf ~/.dotfiles/rofi/config.rasi ~/.config/rofi/config.rasi
+
 # code-oss
 ln -sf ~/.dotfiles/code-oss/settings.json ~/.config/Code\ -\ OSS/User/settings.json
 
