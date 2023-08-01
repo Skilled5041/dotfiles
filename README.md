@@ -12,7 +12,6 @@
 - Install grimblash screenshoter
 - Install eww bar
 - Instal swww wallpaper
-- Config rofi
 - Config udiskie-dmenu
 - Install and config clipboard manager
 - Install wl-clipboard
