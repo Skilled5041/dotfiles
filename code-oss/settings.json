@@ -16,5 +16,7 @@
         "plaintext": true,
         "markdown": false,
         "scminput": false
-    }
+    },
+    "emeraldwalk.runonsave": {},
+    "workbench.iconTheme": "material-icon-theme"
 }
