@@ -9,11 +9,11 @@
 - Transfer data from windows
 - ~~Config sway notification centre~~ ?
 - Install swaylock and config
-- Install grimblash screenshoter
+- ~~Install grimblast screenshoter~~
 - Install eww bar
 - Install swww wallpaper
 - Config udiskie-dmenu
-- Install and config clipboard manager
-- Install wl-clipboard
+- ~~Install wl-clipboard~~
 - Install hyprpicker colour picker
 - Setup vencord
+- Install file managers
