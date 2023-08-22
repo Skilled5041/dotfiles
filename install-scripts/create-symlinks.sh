@@ -17,7 +17,8 @@ function create_symlink() {
 		echo "Error: please provide the file to symlink"
 	fi
 
-	ln -sf ~/.dotfiles/$1 ~/$1
+	# shellcheck disable=SC2086
+	ln -sf ~/.dotfiles/"$1" ~/$1
 }
 
 # dotfiles
@@ -51,6 +52,10 @@ mkdir ~/.config/swaync
 ln -sf ~/.dotfiles/swaync/config.json ~/.config/swaync/config.json
 ln -sf ~/.dotfiles/swaync/style.less ~/.config/swaync/style.css
 
+# eww
+mkdir ~/.config/eww
+ln -sf ~/.dotfiles/eww/eww.yuck ~/.config/eww/eww.yuck
+ln -sf ~/.dotfiles/eww/eww.css ~/.config/eww/eww.css
 
 # pacman hooks
 ln -sf ~/.dotfiles/hooks/update-pkglist.hook /usr/share/libalpm/hooks/update-pkglist.hook

@@ -25,7 +25,7 @@ config.colors = {
 }
 config.color_scheme = "Brogrammer"
 
-config.window_background_opacity = 0.8
+config.window_background_opacity = 0.6
 
 config.animation_fps = 1
 

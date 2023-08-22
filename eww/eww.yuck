@@ -1,0 +1,38 @@
+(defwindow bar
+  :monitor 0
+  :geometry (geometry :x "0%"
+             :y "16px"
+             :width "97.4%"
+             :height "30px"
+             :anchor "top center")
+  :stacking "fg"
+  :exclusive true
+  :focusable false
+  (bar_container))
+
+(defvar workplaces_list "[1, 2, 3, 4, 5]")
+
+(defwidget bar_container []
+  (box :orientation "horizontal"
+    :halign "baseline"
+    (for workplace in workplaces_list
+      (workplace_switcher :num workplace))
+    
+    (time-display)
+    (battery-display)))
+
+(defwidget time-display []
+  (box :orientation "horizontal"
+    :halign "right"
+    (label :text "${time}")))
+
+(defwidget battery-display []
+  (box :orientation "horizontal"
+    :halign "right"
+    (label :text "${battery_percentage}%")))
+
+(defpoll time :interval "1s"
+ `date +%H:%M:%S`)
+
+(defpoll battery_percentage :interval "1s"
+  `cat /sys/class/power_supply/BAT1/capacity`)

@@ -1,0 +1,13 @@
+(defvar workplaces_list "[1, 2, 3, 4, 5]")
+
+(defwidget workplace_changer [num]
+  (box :orientation "horizontal"
+    :halign "left"
+    (button :onclick "hyprctl dispatch workspace ${num}"
+    num)))
+
+(defwidget workplace_changer_container
+  (box :orientation "horizontal"
+    :halign "left"
+    (for workplace in workplaces_list
+      (workplace_changer :num workplace)))

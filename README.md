@@ -11,9 +11,11 @@
 - Install swaylock and config
 - ~~Install grimblast screenshoter~~
 - Install eww bar
-- Install swww wallpaper
+- Install swww wallpaper (download wallpapers)
 - Config udiskie-dmenu
 - ~~Install wl-clipboard~~
-- Install hyprpicker colour picker
+- ~~Install hypr colour picker~~
 - Setup vencord
 - Install file managers
+- Retheme everything
+- Fix rofi config rounded corners

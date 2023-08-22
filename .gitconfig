@@ -5,3 +5,5 @@
 	name = Skilled5041
 [credential]
 	credentialStore = gpg
+[core]
+	autocrlf = input
