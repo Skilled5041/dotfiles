@@ -56,6 +56,8 @@ ln -sf ~/.dotfiles/swaync/style.less ~/.config/swaync/style.css
 mkdir ~/.config/eww
 ln -sf ~/.dotfiles/eww/eww.yuck ~/.config/eww/eww.yuck
 ln -sf ~/.dotfiles/eww/eww.css ~/.config/eww/eww.css
+ln -sf ~/.dotfiles/eww/workspace_changer.yuck ~/.config/eww/workspace_changer.yuck
+ln -sf ~/.dotfiles/eww/left.yuck ~/.config/eww/left.yuck
 
 # pacman hooks
 ln -sf ~/.dotfiles/hooks/update-pkglist.hook /usr/share/libalpm/hooks/update-pkglist.hook

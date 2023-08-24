@@ -1,0 +1,22 @@
+(deflisten current_workspace :initial 1 "bash ~/.dotfiles/eww/scripts/get_active_workspace.sh")
+(deflisten workspaces :initial "[]" "bash ~/.dotfiles/eww/scripts/get_workspaces.sh")
+
+(defvar hovered_workspace "")
+
+(defwidget workspaces []
+  (eventbox :onscroll "bash ~/.dotfiles/eww/scripts/change_active_workspace.sh {} ${current_workspace}" :class "workspaces-widget"
+    (box
+      :spacing 8
+      :class "workspace-changer"
+      (for workspace in workspaces
+        (eventbox
+          :class "workspace-entry-container"
+          :onclick "hyprctl dispatch workspace ${workspace.id}"
+          :onhover "eww update hovered_workspace=${workspace.id}"
+          :onhoverlost "eww update hovered_workspace=null"
+          :cursor "pointer"
+          (box
+            :class "workspace-entry"
+            (label
+              :class "workspace-circle-${workspace.id == current_workspace ? "current" : workspace.windows > 0 ? "occupied" : "empty"}"
+              :text {workspace.id == current_workspace ? "" : ""})))))))
