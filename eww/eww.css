@@ -4,14 +4,11 @@
 }
 
 * {
+    color: #e6f5ff;
     border-radius: 24px;
     border: none;
     font-family: "JetBrainsMono Nerd Font Mono";
     font-weight: 500;
-}
-
-.workspace-changer {
-    padding-left: 24px;
 }
 
 .workspace-circle-current {
@@ -29,6 +26,10 @@
     color: #363c49;
 }
 
+.search-button-box {
+    padding-left: 24px;
+}
+
 .search-button {
     color: #e6f5ff;
     font-size: 32px;
@@ -37,6 +38,54 @@
     padding-right: 4px;
 }
 
-.test {
-    background-color: antiquewhite;
+.date-display {
+    padding-right: 32px;
+}
+
+calendar {
+    background-color: #020718;
+    font-size: 16px;
+    color: #e6f5ff;
+}
+
+calendar.header {
+    color: #43B1ED;
+    font-weight: bold;
+}
+
+calendar.button {
+    color: #43B1ED;
+}
+
+calendar.highlight {
+    color: #43B1ED;
+    font-weight: bold;
+}
+
+calendar:selected {
+    background-color: #e6f5ff;
+    color: #020718;
+}
+
+calendar:indeterminate {
+    color: #626d83;
+}
+
+.calendar-box {
+    background-color: #020718;
+    padding: 12px;
+    border-radius: 14px;
+}
+
+.battery-display-text {
+    margin-left: 4px;
+    font-size: 16px;
+}
+
+.battery-display-circle-top {
+    color: #e6f5ff
+}
+
+.battery-display-circle-bottom {
+    color: #626d83;
 }

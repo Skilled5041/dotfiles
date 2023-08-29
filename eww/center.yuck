@@ -1,0 +1,7 @@
+(defwidget center []
+  (box
+    :space-evenly false
+    :spacing 24
+    :valign "center"
+    :class "enter"
+   (box "test")))

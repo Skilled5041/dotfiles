@@ -52,8 +52,7 @@
     "title",
     "dnd",
     "notifications",
-    "mpris",
-    "label"
+    "mpris"
   ],
   "widget-config": {
     "inhibitors": {
@@ -68,10 +67,6 @@
     },
     "dnd": {
       "text": "Do Not Disturb"
-    },
-    "label": {
-      "max-lines": 5,
-      "text": "I use arch btw "
     },
     "mpris": {
       "image-size": 96,

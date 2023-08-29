@@ -1,0 +1,51 @@
+(defvar calendar_opened false)
+
+(defwidget right []
+  (box
+    :space-evenly false
+    :spacing 24
+    :halign "end"
+    :valign "center"
+    :class "right"
+    (battery-display)
+    (time_display)
+    (date-display)))
+
+(defwidget battery-display []
+  (box :orientation "horizontal"
+    (overlay
+      (circular-progress
+        :class "battery-display-circle-bottom"
+        :value 100
+        :start-at 75
+        :thickness 4)
+      (circular-progress
+        :class "battery-display-circle-top"
+        :value {EWW_BATTERY.BAT1.capacity}
+        :start-at 75
+        :thickness 4))
+    (label
+      :class "charged-icon"
+      :text {EWW_BATTERY.BAT1.status == "Charging" ? "" : ""}})
+    (label 
+      :class "battery-display-text"
+      :text "${EWW_BATTERY.BAT1.capacity}%")))
+
+(defwidget time_display []
+  (box :orientation "horizontal"
+    :class "time-display"
+    :halign "end"
+    (label
+      :style "font-size: 16px;"
+      :text {formattime(EWW_TIME, "%H:%M:%S")})))
+
+(defwidget date-display []
+  (box :orientation "horizontal"
+    :class "date-display"
+    :halign "end"
+    (eventbox
+      :cursor "pointer"
+      :onclick {calendar_opened == false ? "~/eww/target/release/eww update calendar_opened=true && ~/eww/target/release/eww open calendar" : "~/eww/target/release/eww update calendar_opened=false && ~/eww/target/release/eww close calendar"}
+      (label
+        :style "font-size: 16px;"
+        :text {formattime(EWW_TIME, "%Y-%m-%d")}))))

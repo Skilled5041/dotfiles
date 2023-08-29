@@ -6,8 +6,8 @@
     :spacing 24
     :valign "center"
     :class "left"
-    (workspaces)
-    (search_button)))
+    (search_button)
+    (workspaces)))
 
 (defwidget search_button []
   (box

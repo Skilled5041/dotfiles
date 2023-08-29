@@ -1,10 +1,14 @@
 (include "./left.yuck")
+(include "./center.yuck")
+(include "./right.yuck")
+(include "./calendar.yuck")
 
 (defwindow bar
   :monitor 0
-  :geometry (geometry :x "0%"
+  :geometry (geometry 
+    :x "0%"
     :y "16px"
-    :width "97.4%"
+    :width "1870"
     :height "36px"
   :anchor "top center")
   :stacking "fg"
@@ -17,21 +21,5 @@
   (centerbox :orientation "horizontal"
     :class "bar"
     (left)
-    (time-display)
-    (battery-display)))
-
-(defwidget time-display []
-  (box :orientation "horizontal"
-    :halign "center"
-    (label :text {formattime(EWW_TIME, "%H:%M:%S")})))
-
-(defwidget battery-display []
-  (box :orientation "horizontal"
-    :halign "center"
-    (label :text "${battery_percentage}%")
-    (circular-progress
-      :value battery_percentage
-    :thickness 4)))
-
-(defpoll battery_percentage :interval "1s"
-"cat /sys/class/power_supply/BAT1/capacity")
+    (center)
+    (right)))
