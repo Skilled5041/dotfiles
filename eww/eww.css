@@ -78,12 +78,12 @@ calendar:indeterminate {
 }
 
 .battery-display-text {
-    margin-left: 4px;
     font-size: 16px;
+    padding-left: 8px;
 }
 
 .battery-display-circle-top {
-    color: #e6f5ff
+    color: #e6f5ff;
 }
 
 .battery-display-circle-bottom {

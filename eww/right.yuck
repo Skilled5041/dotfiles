@@ -13,7 +13,10 @@
 
 (defwidget battery-display []
   (box :orientation "horizontal"
+    :space-evenly false
     (overlay
+      :width 24
+      :height 24
       (circular-progress
         :class "battery-display-circle-bottom"
         :value 100
@@ -24,12 +27,9 @@
         :value {EWW_BATTERY.BAT1.capacity}
         :start-at 75
         :thickness 4))
-    (label
-      :class "charged-icon"
-      :text {EWW_BATTERY.BAT1.status == "Charging" ? "" : ""}})
     (label 
       :class "battery-display-text"
-      :text "${EWW_BATTERY.BAT1.capacity}%")))
+      :text "${EWW_BATTERY.BAT1.capacity}% ${EWW_BATTERY.BAT1.status == "Charging" ? "󱐋" : ""}")))
 
 (defwidget time_display []
   (box :orientation "horizontal"
