@@ -12,23 +12,11 @@
 (defwidget search_button []
   (box
     :class "search-button-box"
+    :tooltip "Search"
     (eventbox
       :class "search-button"
       :cursor "pointer"
       :onclick "rofi -show drun &"
       :onrightclick "rofi -show run &"
       :width 32
-      ""
-      ; (overlay
-      ;   (label
-      ;     :valign "center"
-      ;     :halign "center"
-      ;     :style "font-size: 22px; font-weight: 400;"
-      ;     :text "")
-      ;   (label
-      ;     :angle 30
-      ;     :halign "center"
-      ;     :valign "center"
-      ;     :style "font-size: 46px;"
-      ;     :text "󰋙"))
-        )))
+      "")))

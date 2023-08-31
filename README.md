@@ -19,3 +19,4 @@
 - Install file managers
 - Retheme everything
 - Fix rofi config rounded corners
+- Configure starship

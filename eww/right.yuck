@@ -1,4 +1,6 @@
 (defvar calendar_opened false)
+(defvar newline "
+")
 
 (defwidget right []
   (box
@@ -14,6 +16,13 @@
 (defwidget battery-display []
   (box :orientation "horizontal"
     :space-evenly false
+    :tooltip {"${EWW_BATTERY.BAT1.status == "Charging" ?
+      "${EWW_BATTERY.BAT1.capacity == 100 ?
+        "Fully Charged${newline}" :
+        "Time Until Full: ${battery_remaining_time}${newline}"}" :
+      "Time Remaining: ${battery_remaining_time}${newline}"}"
+      + "Temperature: ${battery_temp}°C${newline}"
+      + "Health: ${battery_health}"}
     (overlay
       :width 24
       :height 24
@@ -31,12 +40,27 @@
       :class "battery-display-text"
       :text "${EWW_BATTERY.BAT1.capacity}% ${EWW_BATTERY.BAT1.status == "Charging" ? "󱐋" : ""}")))
 
+(defpoll battery_remaining_time
+  :interval "5s"
+  `acpi -b | cut -d " " -f 5 | xargs`)
+
+(defpoll battery_health
+  :interval "1m"
+  `acpi -i | tail --lines 1 | cut -d "=" -f 2 | xargs`)
+
+(defpoll battery_temp
+  :interval "5s"
+  `acpi -t | cut -d " " -f 4 | xargs`)
+
 (defwidget time_display []
   (box :orientation "horizontal"
     :class "time-display"
     :halign "end"
     (label
       :style "font-size: 16px;"
+      ; 12hr time
+      :tooltip {formattime(EWW_TIME, "%I:%M:%S %p")}
+      ; 24hr time
       :text {formattime(EWW_TIME, "%H:%M:%S")})))
 
 (defwidget date-display []
@@ -48,4 +72,5 @@
       :onclick {calendar_opened == false ? "~/eww/target/release/eww update calendar_opened=true && ~/eww/target/release/eww open calendar" : "~/eww/target/release/eww update calendar_opened=false && ~/eww/target/release/eww close calendar"}
       (label
         :style "font-size: 16px;"
+        :tooltip {formattime(EWW_TIME, "%A, %B %d, %Y")}
         :text {formattime(EWW_TIME, "%Y-%m-%d")}))))

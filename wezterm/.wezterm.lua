@@ -12,7 +12,7 @@ config.enable_wayland = true
 config.check_for_updates = true
 config.check_for_updates_interval_seconds = 86400
 
-config.font = wezterm.font "JetBrainsMono Nerd Font Mono"
+config.font = wezterm.font "JetBrainsMono Nerd Font"
 
 config.char_select_bg_color = "#acc2e8"
 config.char_select_fg_color = "#acc2e8"

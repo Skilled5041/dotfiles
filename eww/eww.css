@@ -7,23 +7,32 @@
     color: #e6f5ff;
     border-radius: 24px;
     border: none;
-    font-family: "JetBrainsMono Nerd Font Mono";
-    font-weight: 500;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: 600;
+}
+
+tooltip {
+    background-color: #020718;
+    color: #e6f5ff;
+    border-radius: 12px;
 }
 
 .workspace-circle-current {
-    font-size: 32px;
+    font-size: 22px;
     color: #e6f5ff;
+    margin-right: 6px;
 }
 
 .workspace-circle-occupied {
-    font-size: 32px;
+    font-size: 22px;
     color: #e6f5ff;
+    margin-right: 6px;
 }
 
 .workspace-circle-empty {
-    font-size: 32px;
+    font-size: 22px;
     color: #363c49;
+    margin-right: 6px;
 }
 
 .search-button-box {
@@ -32,7 +41,7 @@
 
 .search-button {
     color: #e6f5ff;
-    font-size: 32px;
+    font-size: 22px;
     border-radius: 0;
     padding-left: 4px;
     padding-right: 4px;
@@ -78,6 +87,8 @@ calendar:indeterminate {
 }
 
 .battery-display-text {
+    /* Mono version has larger lightning icon */
+    font-family: "JetBrainsMono Nerd Font Mono";
     font-size: 16px;
     padding-left: 8px;
 }

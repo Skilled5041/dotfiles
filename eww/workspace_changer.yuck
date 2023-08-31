@@ -18,5 +18,6 @@
           (box
             :class "workspace-entry"
             (label
+              :tooltip "Windows: ${workspace.windows}"
               :class "workspace-circle-${workspace.id == current_workspace ? "current" : workspace.windows > 0 ? "occupied" : "empty"}"
               :text {workspace.id == current_workspace ? "" : ""})))))))

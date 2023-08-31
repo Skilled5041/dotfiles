@@ -3,5 +3,31 @@
     :space-evenly false
     :spacing 24
     :valign "center"
-    :class "enter"
-   (box "test")))
+    :class "center"
+   (test)))
+
+  
+; (defwidget test []
+;   (box
+;     (overlay
+;       (label
+;         :style "font-size: 32px; border: none;"
+;         :text "󱐋")
+;       (revealer
+;         :transition "crossfade"
+;         :reveal {EWW_TIME % 6 >= 3}
+;         :duration 2000
+;         (box
+;           :style "background-color: #020718;")))))
+
+(defwidget test []
+  (graph
+    :width 128
+    :height 32
+    :thickness 2
+    :value {EWW_TEMPS.CORETEMP_PACKAGE_ID_0}
+    :min 0
+    :max 100
+    :time-range 100000
+    :dynamic false
+    :line-style "round"))
