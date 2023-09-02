@@ -18,19 +18,19 @@ tooltip {
 }
 
 .workspace-circle-current {
-    font-size: 22px;
+    font-size: 26px;
     color: #e6f5ff;
     margin-right: 6px;
 }
 
 .workspace-circle-occupied {
-    font-size: 22px;
+    font-size: 26px;
     color: #e6f5ff;
     margin-right: 6px;
 }
 
 .workspace-circle-empty {
-    font-size: 22px;
+    font-size: 26px;
     color: #363c49;
     margin-right: 6px;
 }
@@ -41,14 +41,10 @@ tooltip {
 
 .search-button {
     color: #e6f5ff;
-    font-size: 22px;
+    font-size: 26px;
     border-radius: 0;
     padding-left: 4px;
     padding-right: 4px;
-}
-
-.date-display {
-    padding-right: 32px;
 }
 
 calendar {
@@ -80,6 +76,20 @@ calendar:indeterminate {
     color: #626d83;
 }
 
+.clock {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-right: 36px;
+}
+
+.time-display {
+    font-size: 16px;
+}
+
+.date-display {
+    font-size: 16px;
+}
+
 .calendar-box {
     background-color: #020718;
     padding: 12px;
@@ -89,7 +99,7 @@ calendar:indeterminate {
 .battery-display-text {
     /* Mono version has larger lightning icon */
     font-family: "JetBrainsMono Nerd Font Mono";
-    font-size: 16px;
+    font-size: 18px;
     padding-left: 8px;
 }
 
@@ -99,4 +109,19 @@ calendar:indeterminate {
 
 .battery-display-circle-bottom {
     color: #626d83;
+}
+
+.powermenu {
+    padding-right: 12px;
+    font-size: 24px;
+}
+
+.powerbutton {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.powermenu-revealer {
+    margin: 0;
+    padding: 0;
 }

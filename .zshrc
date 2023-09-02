@@ -16,7 +16,7 @@ unsetopt autocd beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
-PROMPT='%n@%m %~ $ '
+# PROMPT='%n@%m %~ $ '
 
 alias tetrio="tetrio-plus-bin"
 alias cls="clear"

@@ -9,9 +9,23 @@
     :halign "end"
     :valign "center"
     :class "right"
-    (battery-display)
-    (time_display)
-    (date-display)))
+    (eventbox
+      :onhover "eww update powermenu_revealed=true"
+      :onhoverlost "eww update powermenu_revealed=false"
+      (box
+        :space-evenly false
+        :spacing 12
+        (battery-display)
+        (powermenu)))
+    (eventbox
+      :cursor "pointer"
+      :onclick {calendar_opened == false ? "~/eww/target/release/eww update calendar_opened=true && ~/eww/target/release/eww open calendar" : "~/eww/target/release/eww update calendar_opened=false && ~/eww/target/release/eww close calendar"}  
+      (box
+        :class "clock"
+        :orientation "vertical"
+        :tooltip "${formattime(EWW_TIME, "%I:%M:%S %p")}${newline}${formattime(EWW_TIME, "%A, %B %d, %Y")}"
+        (time_display)
+        (date-display)))))
 
 (defwidget battery-display []
   (box :orientation "horizontal"
@@ -24,8 +38,8 @@
       + "Temperature: ${battery_temp}°C${newline}"
       + "Health: ${battery_health}"}
     (overlay
-      :width 24
-      :height 24
+      :width 32
+      :height 32
       (circular-progress
         :class "battery-display-circle-bottom"
         :value 100
@@ -42,24 +56,21 @@
 
 (defpoll battery_remaining_time
   :interval "5s"
-  `acpi -b | cut -d " " -f 5 | xargs`)
+  "acpi -b | cut -d ' ' -f 5 | xargs")
 
 (defpoll battery_health
   :interval "1m"
-  `acpi -i | tail --lines 1 | cut -d "=" -f 2 | xargs`)
+  "acpi -i | tail --lines 1 | cut -d '=' -f 2 | xargs")
 
 (defpoll battery_temp
   :interval "5s"
-  `acpi -t | cut -d " " -f 4 | xargs`)
+  "acpi -t | cut -d ' ' -f 4 | xargs")
 
 (defwidget time_display []
   (box :orientation "horizontal"
     :class "time-display"
     :halign "end"
     (label
-      :style "font-size: 16px;"
-      ; 12hr time
-      :tooltip {formattime(EWW_TIME, "%I:%M:%S %p")}
       ; 24hr time
       :text {formattime(EWW_TIME, "%H:%M:%S")})))
 
@@ -67,10 +78,46 @@
   (box :orientation "horizontal"
     :class "date-display"
     :halign "end"
+    (label
+      :text {formattime(EWW_TIME, "%Y-%m-%d")})))
+
+(defwidget powermenu []
+  (revealer
+    :class "powermenu-revealer"
+    :reveal {powermenu_revealed}
+    :transition "slideleft"
+    :duration "600ms"
+    (box
+      :class "powermenu"
+      :spacing 8
+      (powerbutton
+        :icon "⏻"
+        :command "shutdown"
+        :tooltip "Shutdown")
+      (powerbutton
+        :icon ""
+        :command "reboot"
+        :tooltip "Restart")
+      (powerbutton 
+        :icon "󰤄" 
+        :command "systemctl suspend"
+        :tooltip "Sleep")
+      (powerbutton
+        :icon ""
+        :command "notify-send 'not implemented yet'"
+        :tooltip "Lock")
+      (powerbutton
+        :icon ""
+        :command "hyprctl dispatch exit"
+        :tooltip "Sign Out"))))
+
+(defvar powermenu_revealed false)
+
+(defwidget powerbutton [icon command ?tooltip]
     (eventbox
+      :onclick command
       :cursor "pointer"
-      :onclick {calendar_opened == false ? "~/eww/target/release/eww update calendar_opened=true && ~/eww/target/release/eww open calendar" : "~/eww/target/release/eww update calendar_opened=false && ~/eww/target/release/eww close calendar"}
+      :tooltip tooltip
       (label
-        :style "font-size: 16px;"
-        :tooltip {formattime(EWW_TIME, "%A, %B %d, %Y")}
-        :text {formattime(EWW_TIME, "%Y-%m-%d")}))))
+        :class "powerbutton"
+        :text icon)))
