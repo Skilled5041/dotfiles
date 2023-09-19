@@ -38,8 +38,8 @@
       + "Temperature: ${battery_temp}°C${newline}"
       + "Health: ${battery_health}"}
     (overlay
-      :width 32
-      :height 32
+      :width 24
+      :height 24
       (circular-progress
         :class "battery-display-circle-bottom"
         :value 100

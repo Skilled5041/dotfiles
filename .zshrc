@@ -21,6 +21,7 @@ bindkey -e
 alias tetrio="tetrio-plus-bin"
 alias cls="clear"
 alias show-battery="cat /sys/class/power_supply/BAT1/capacity"
+alias pokec="pokemon-colorscripts"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -28,4 +29,15 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH=~/eww/target/release:$PATH
 
+export STARSHIP_CONFIG=~/.dotfiles/starship/startship.toml
 eval "$(starship init zsh)"
+
+
+# shiny=$((RANDOM % 500))
+
+# if [ $shiny -eq 1 ]; then
+#     pokec -r -s | sed 's/./\U&/'
+#     echo "Shiny!" | lolcat -v 3 -h 3
+# else
+#     pokec -r | sed 's/./\U&/'
+# fi
