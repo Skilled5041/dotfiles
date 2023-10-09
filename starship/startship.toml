@@ -111,6 +111,7 @@ symbol = " "
 
 [dart]
 symbol = " "
+detect_folders = []
 
 [directory]
 style = "fg:#e3e5e5 bg:#769ff0"

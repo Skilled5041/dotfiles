@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # The repo must be cloned to the home folder as ~/.dotfiles/
 

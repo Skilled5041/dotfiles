@@ -14,7 +14,7 @@ while [[ 0 -eq 0 ]]; do
     battery_charge="$(cat /sys/class/power_supply/BAT1/capacity)"
     
     if [[ $battery_status == 'Discharging' && $battery_charge -le 20 ]]; then
-        notify-send "Battery low!"
+        notify-send -u critical "Battery low!"
         sleep 180
     else
         sleep 1
