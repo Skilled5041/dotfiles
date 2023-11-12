@@ -1,6 +1,7 @@
 # TODO
 
 - Finish hyprland config (window rules, improve animations)
+- Fix hyprland groups
 - ~~Finish wezterm config~~ ?
 - Config nvim
 - Config zsh

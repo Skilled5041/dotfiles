@@ -26,7 +26,7 @@ auto-select: false;
 
 click-to-exit: true;
 window-thumbnail: true;
-terminal: "wezterm";
+terminal: "kitty";
 
   timeout {
       action: "kb-cancel";
