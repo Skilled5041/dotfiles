@@ -24,7 +24,7 @@ config.check_for_updates = true
 config.check_for_updates_interval_seconds = 86400
 
 config.font =
-  wezterm.font("JetBrains Mono Nerd Font", { weight = "Bold", italic = false })
+  wezterm.font("JetBrains Mono Nerd Font", { weight = "Regular", italic = false })
 
 
 config.char_select_bg_color = "#acc2e8"
