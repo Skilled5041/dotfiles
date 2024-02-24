@@ -4,11 +4,11 @@
     :spacing 24
     :valign "center"
     :class "center"
-    (label :text "${current-artist} - ${current-song} ()")))
+    (label :text "test")))
 
 (defpoll current-song
   :interval "1s"
-"playerctl metadata xesam:album")
+"playerctl metadata xesam:title")
 
 (defpoll current-artist
   :interval "1s"

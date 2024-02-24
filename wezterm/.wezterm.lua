@@ -1,15 +1,3 @@
--- local function change_padding(window, app_name, padding)
--- 	local overrides = window:get_config_overrides() or {}
-
--- 	if app_name == "nvim" then
--- 		overrides.window_padding = padding
--- 	else
--- 		overrides.window_padding = nil
--- 	end
-
--- 	window:set_config_overrides(overrides)
--- end
-
 local wezterm = require("wezterm")
 
 local config = {}
@@ -70,16 +58,5 @@ config.adjust_window_size_when_changing_font_size = false
 config.audible_bell = "Disabled"
 
 config.enable_wayland = true
-
---  No padding for neovim
--- wezterm.on("window-resized", function(window, pane)
--- 	local app_name = pane:get_app().executable:lower()
--- 	change_padding(window, app_name, {
--- 		left = 0,
--- 		right = 0,
--- 		top = 0,
--- 		bottom = 0,
--- 	})
--- end)
 
 return config
